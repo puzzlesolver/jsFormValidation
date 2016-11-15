@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+    
+<!--    Simple form which allows a user to enter personal information for a Study Abroad Language Program.
+        Includes textboxes, dropdown menus, a submit button to send the form to the server and a reset button to clear the fields.
+        Three fieldsets are included for selecting the right program, entering information as a parent, and entering your child information.
+-->
+
+<head>
+    <title>Registration Form</title>
+    <meta charset=utf-8>
+    <link rel=stylesheet href="mystyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="myjavascript.js"></script>
+</head>
+
+<body>
+    <div id="homelink">
+	<ul>
+	    <li><a href="index.html">Back to Homepage</a></li>
+	</ul>
+    </div>
+    <h1>SDSU Summer Abroad Spanish Program</h1>
+    <form name="personal_info" method="post" action="process_request.php" enctype="multipart/form-data">
+        
+    <fieldset>
+        <legend>Our Courses</legend>
+        <label>Select Program *</label>
+                <select name="program">
+                    <option value="">Make a selection:</option>
+                    <option value="1">Beginning Spanish</option>
+                    <option value="2">Advanced Spanish</option>
+                    <option value="3">Conversational Spanish</option>
+                    <option value="4">Advanced Conversational Spanish</option>
+                    <option value="5">Spanish Grammar and Composition</option>
+                    <option value="6">Cultural Treasures of Mexico</option>
+                </select>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Parent or Primary Guardian Information</legend>
+        
+        <ul>
+            <li><label>First Name *</label>
+                <input type="text" name="parent_fname" size="25" /></li>
+            <li><label>Middle Name</label>
+                <input type="text" name="parent_mname" size="25" /></li>
+            <li><label>Last Name *</label>
+                <input type="text" name="parent_lname" size="25" /></li>
+            <li><label>Relationship to Child *</label>
+                <select name="rel_to_child">
+                    <option value="">Select from Menu:</option>
+                    <option value="father">Father</option>
+                    <option value="mother">Mother</option>
+                    <option value="guardian">Guardian</option>
+                </select></li>
+            <li><label>Address *</label>
+                <input type="text" name="address1" size="45" />
+                <label>&nbsp;</label><input type="text" name="address2" size="45" /></li>   
+            <li><label>City *</label>
+                <input type="text" name="city" size="25" /></li>
+            <li><label>State *</label>
+                <input type="text" name="state" size="3" maxlength="2" /></li>      
+            <li><label>Zipcode *</label>
+                <input type="text" name="zip" size="6" maxlength="5" /></li>      
+            <li><label>Home Phone *</label>
+                (<input type="text" name="area_code" size="4" maxlength="3" />)  
+                 <input type="text" name="prefix" size="4" maxlength="3" />
+                <input type="text" name="phone" size="5" maxlength="4" /></li>
+            <li><label>Cell Phone *</label>
+                (<input type="text" name="cell_area_code" size="4" maxlength="3" />)  
+                 <input type="text" name="cell_prefix" size="4" maxlength="3" />
+                <input type="text" name="cell_phone" size="5" maxlength="4" /></li>
+            <li><label>Email *</label>
+                <input type="text" name="email" size="35" /></li>
+        </ul>                    
+        </fieldset>
+    
+    <fieldset>
+        <legend>Child Information</legend>
+        <ul>
+            <li><label for="fname">First Name *</label>
+                <input type="text" id="fname" name="child_fname" size="25" /></li>
+            <li><label>Middle Name</label>
+                <input type="text" name="child_mname" size="25" /></li>
+            <li><label>Last Name *</label>
+                <input type="text" name="child_lname" size="25" /></li>
+            <li><label>Name the child goes by</label>
+                <input type="text" name="nickname" size="25" /></li>
+            <li><label>Photo of Child</label>
+                <input type="file" name="file" /></li>
+            <li><label>Gender *</label>
+                <select name="gender">
+                    <option value="">Select Gender:</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                </select></li>
+            <li><label>Date of Birth *</label>
+                <input type="text" placeholder="mm/dd/yyyy" name="dob" size="12" /></li>            
+            <li><label>Medical Conditions</label>
+                <textarea cols="30" rows="5" name="conditions"></textarea></li>
+            <li><label>Special Dietary Requirements</label>
+                <textarea cols="30" rows="5" name="diet"></textarea></li>
+            <li><label>Secondary Emergency Contact *</label>
+                <input type="text" name="sec" size="35" /></li>
+            <li><label>Home Phone *</label>
+                (<input type="text" name="sec_area_code" size="4" maxlength="3" />)  
+                 <input type="text" name="sec_prefix" size="4" maxlength="3" />
+                <input type="text" name="sec_phone" size="5" maxlength="4" /></li>
+        
+        </ul>
+        </fieldset>
+    
+    <div id="message_line">&nbsp;</div>
+        <div id="clear_submit_buttons">  
+            <input type="reset" value="Clear" class="button" />
+            <input type="submit" value="Submit"  class="button" /> 
+        </div>
+        
+    </form>
+
+</body>
+</html>
